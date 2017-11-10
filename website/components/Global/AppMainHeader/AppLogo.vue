@@ -7,9 +7,9 @@
           #&nbsp;1
         </div>
       </div>
-      <div class="app-logo-sub">
+      <h1 class="app-logo-sub">
         Fight for <span>Sub</span>
-      </div>
+      </h1>
     </div>
   </div>
 </template>
@@ -27,12 +27,12 @@
     width: 300px;
     
     &-big, &-sub{
-      text-shadow: 0 3px 3px rgba(black, 0.5);
+      @include text-shadow(0 3px 3px rgba(black, 0.5));
     }
 
     &-edition{
-      box-shadow: 0 3px 3px rgba(black, 0.5);
-      text-shadow: none;
+      @include box-shadow(0 3px 3px rgba(black, 0.5));
+      @include text-shadow(none);
     }
     
     &-big{
@@ -67,6 +67,7 @@
       font-family: 'BigNoodle', 'Roboto', sans-serif;
       font-style: italic;
       text-align: center;
+      margin: 0;
 
       span{
         color: $green;

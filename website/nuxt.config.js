@@ -15,8 +15,12 @@ module.exports = {
   },
   css: [
     '~/node_modules/normalize.css/normalize.css',
+    '~/node_modules/vuetify/dist/vuetify.min.css',
   ],
   loading: { color: '#28d244' },
+  plugins: [
+    '~/plugins/vuetify.js',
+  ],
   build: {
     extend(config, ctx) {
       if (ctx.dev && ctx.isClient) {
