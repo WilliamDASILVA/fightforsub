@@ -25,5 +25,12 @@
   @import '~assets/scss/style.scss';
 
   .app-main-header{
+    background-color: $darkgrey;
+    background-image: url('~/assets/img/header.jpg');
+    background-size: cover;
+    height: 220px;
+    
+    &-content{
+    }
   }
 </style>

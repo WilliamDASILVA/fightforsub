@@ -52,9 +52,18 @@
 <style lang="scss" scoped>
   @import '~assets/scss/style.scss';
 
-  .app-header{
-    background-color: $green;
+  #app-header{
     height: 32px;
+  }
+
+  .app-header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 32px;
+    background-color: $green;
+    z-index: 10;
 
     ul, li{
       margin: 0;

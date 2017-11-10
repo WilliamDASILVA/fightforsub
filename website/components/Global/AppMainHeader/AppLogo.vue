@@ -25,6 +25,16 @@
 
   .app-logo{
     width: 300px;
+    
+    &-big, &-sub{
+      text-shadow: 0 3px 3px rgba(black, 0.5);
+    }
+
+    &-edition{
+      box-shadow: 0 3px 3px rgba(black, 0.5);
+      text-shadow: none;
+    }
+    
     &-big{
       position: relative;
       color: white;
