@@ -10,7 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171110030909) do
+ActiveRecord::Schema.define(version: 20171110041312) do
+
+  create_table "seasons", force: :cascade do |t|
+    t.datetime "begin_at"
+    t.integer  "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "seasons_streamers", force: :cascade do |t|
+    t.integer "season_id"
+    t.integer "streamer_id"
+    t.index ["season_id"], name: "index_seasons_streamers_on_season_id"
+    t.index ["streamer_id"], name: "index_seasons_streamers_on_streamer_id"
+  end
+
+  create_table "streamers", force: :cascade do |t|
+    t.string   "channel"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_streamers_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
