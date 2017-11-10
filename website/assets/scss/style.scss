@@ -1,5 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
 @import "_global.scss";
+
+@font-face {
+  font-family: 'BigNoodle'; /*a name to be used later*/
+  src: url('~/assets/fonts/bignoodle.ttf'); /*URL to font*/
+}
 
 body{
   background-color: $black;
+  font-family: 'Roboto', sans-serif;
+}
+
+.wrap{
+  width: 960px;
+  margin: auto;
 }
