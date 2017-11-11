@@ -11,7 +11,7 @@
         </div>
       </main>
       <footer>
-        footer
+        <app-footer/>
       </footer>
     </v-app>
   </div>
@@ -19,11 +19,13 @@
 
 <script>
   import AppHeader from '@/components/Global/AppHeader';
+  import AppFooter from '@/components/Global/AppFooter';
   import AppMainHeader from '@/components/Global/AppMainHeader';
 
   export default {
     components: {
       AppHeader,
+      AppFooter,
       AppMainHeader,
     },
   };

@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import Home from '~/pages/home';
+import About from '~/pages/about';
 
 Vue.use(Router);
 export function createRouter() {
@@ -12,6 +13,11 @@ export function createRouter() {
         name: 'home',
         path: '/',
         component: Home,
+      },
+      {
+        name: 'about',
+        path: '/about',
+        component: About,
       },
     ],
     scrollBehavior() {

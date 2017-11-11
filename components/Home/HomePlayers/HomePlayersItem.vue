@@ -6,19 +6,19 @@
           class="home-players-item-image"
           v-lazy:background-image="data.image"
         ></div>
-        <!-- <div class="item-views">
+        <div class="item-views">
           {{ data.views }} views
         </div>
         <div
           v-if="data.handicap"
           class="item-handicap">
-          Handicap
-        </div> -->
-        <!-- <div
+          <i class="fa fa-wheelchair-alt" aria-hidden="true"></i>
+        </div>
+        <div
           :class="{confirmed: data.status === 'confirmed'}"
           class="item-status">
           Confirmé
-        </div> -->
+        </div>
       </div>
       <div class="home-players-item-slide-el">
         <div class="home-players-item-slide">

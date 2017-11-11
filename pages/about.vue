@@ -6,29 +6,7 @@
           <div class="home-aside-content">
             <div class="content-section">
               <h2>
-                Qu'est ce que le FFS?
-              </h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut accusamus similique error voluptatum beatae eius impedit corporis consequuntur sunt iste? Praesentium veniam corporis maxime obcaecati voluptatem. Repudiandae facere placeat libero.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut accusamus similique error voluptatum beatae eius impedit corporis consequuntur sunt iste? Praesentium veniam corporis maxime obcaecati voluptatem. Repudiandae facere placeat libero.
-              </p>
-            </div>
-            <div class="content-section">
-              <h2>
-                Règles
-              </h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut accusamus similique error voluptatum beatae eius impedit corporis consequuntur sunt iste? Praesentium veniam corporis maxime obcaecati voluptatem. Repudiandae facere placeat libero.
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut accusamus similique error voluptatum beatae eius impedit corporis consequuntur sunt iste? Praesentium veniam corporis maxime obcaecati voluptatem. Repudiandae facere placeat libero.
-              </p>
-            </div>
-            <div class="content-section">
-              <h2>
-                Règles
+                À propos
               </h2>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut accusamus similique error voluptatum beatae eius impedit corporis consequuntur sunt iste? Praesentium veniam corporis maxime obcaecati voluptatem. Repudiandae facere placeat libero.
@@ -43,7 +21,6 @@
           </div>
         </div>
       </div>
-      <home-players/>
     </div>
   </div>
 </template>
