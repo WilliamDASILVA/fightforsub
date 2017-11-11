@@ -5,13 +5,11 @@
         <div
           class="home-players-item-image"
           v-lazy:background-image="data.image"
-        ></div>
+        />
         <div class="item-views">
           {{ data.views }} views
         </div>
-        <div
-          v-if="data.handicap"
-          class="item-handicap">
+        <div v-show="data.handicap" class="item-handicap">
           <i class="fa fa-wheelchair-alt" aria-hidden="true"></i>
         </div>
         <div

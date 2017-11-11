@@ -22,6 +22,7 @@ module.exports = {
   plugins: [
     '~/plugins/vuetify.js',
     '~/plugins/vue-lazyload.js',
+    '~/plugins/moment.js',
   ],
   build: {
     extend(config, ctx) {

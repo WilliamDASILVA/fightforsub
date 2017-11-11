@@ -4,6 +4,9 @@
       <div class="wrap">
         <div class="home-aside">
           <div class="home-aside-content">
+            <home-event-countdown
+              :date="eventDate"
+            />
             <div class="content-section">
               <h2>
                 Qu'est ce que le FFS?
@@ -51,12 +54,22 @@
 <script>
   import HomeRankingBoard from '@/components/Home/HomeRankingBoard';
   import HomePlayers from '@/components/Home/HomePlayers';
+  import HomeEventCountdown from '@/components/Home/HomeEventCountdown';
 
   export default {
     name: 'home',
     components: {
       HomeRankingBoard,
       HomePlayers,
+      HomeEventCountdown,
+    },
+    mounted() {
+      console.log('moment', this.$moment);
+    },
+    data() {
+      return {
+        eventDate: this.$moment('2017-11-14 20:00'),
+      };
     },
   };
 </script>
@@ -70,6 +83,7 @@
     h2{
       font-family: 'BigNoodle', 'Roboto', sans-serif;
       font-style: italic;
+      font-size: 28pt;
     }
 
     p{
