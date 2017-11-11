@@ -3,11 +3,15 @@ module.exports = {
     '@nuxtjs/router',
   ],
   head: {
+    htmlAttrs: {
+      lang: 'fr',
+    },
     title: 'Fight For Sub - La compétition des streamers',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' },
+      { hid: 'description', name: 'description', content: '100 streamers s\'affrontent durant 3 parties de PUBG pour savoir qui recevra 99 abonnements Twitch de la part des perdants.' },
+      { hid: 'keywords', name: 'keywords', content: 'ZeratoR, PUBG, Fortnite, compétition, esport, Twitch, abonnement, Connaissez-vous Twitch Prime?' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
