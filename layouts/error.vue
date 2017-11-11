@@ -9,22 +9,7 @@
         <div class="content">
           <div class="wrap">
             <error-404 v-if="error.statusCode === 404"/>
-            <!-- <error-generic v-if="error.statusCode !== 404"/> -->
-            <!-- <h1 class="error-code" v-if="error.statusCode === 404">
-              Tu cherches un truc?
-            </h1>
-            <h1 class="error-code" v-if="error.statusCode !== 404">
-              {{ error.statusCode }}
-            </h1>
-            <div class="error-wrapper-message">
-              <h2 class="error-message">{{ error.message }}</h2>
-            </div>
-            <img src="~/assets/img/emotes/zrtW.jpg" alt="">
-            <p v-if="error.statusCode === 404">
-              <nuxt-link class="error-link" to="/">
-                Back to the home page
-              </nuxt-link>
-            </p> -->
+            <error-generic v-if="error.statusCode !== 404"/>
           </div>
         </div>
       </main>
@@ -40,6 +25,7 @@
   import AppFooter from '@/components/Global/AppFooter';
   import AppMainHeader from '@/components/Global/AppMainHeader';
   import Error404 from '@/components/Error/Error404';
+  import ErrorGeneric from '@/components/Error/ErrorGeneric';
 
   export default {
     name: 'nuxt-error',
@@ -49,10 +35,18 @@
       AppFooter,
       AppMainHeader,
       Error404,
+      ErrorGeneric,
     },
     head() {
       return {
         title: this.error.message || 'Une erreur est survenue',
+        meta: [
+          {
+            name: 'robots',
+            hid: 'robots',
+            content: 'noindex',
+          },
+        ],
       };
     },
   };
