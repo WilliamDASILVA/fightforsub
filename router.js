@@ -3,6 +3,8 @@ import Router from 'vue-router';
 
 import Home from '~/pages/home';
 import About from '~/pages/about';
+import Ranking from '~/pages/ranking';
+import Legal from '~/pages/legal';
 
 Vue.use(Router);
 export function createRouter() {
@@ -18,6 +20,16 @@ export function createRouter() {
         name: 'about',
         path: '/about',
         component: About,
+      },
+      {
+        name: 'ranking',
+        path: '/ranking',
+        component: Ranking,
+      },
+      {
+        name: 'legal',
+        path: '/legal',
+        component: Legal,
       },
     ],
     scrollBehavior() {

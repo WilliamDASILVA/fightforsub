@@ -3,9 +3,9 @@
     <v-app dark>
       <header>
         <app-header/>
-        <app-main-header/>
       </header>
       <main>
+        <app-main-header/>
         <div class="content">
           <nuxt/>
         </div>
@@ -36,6 +36,10 @@
   @import "./../assets/scss/style.scss";
 
   header{
-    z-index: 0;
+    z-index: 10;
+  }
+
+  main{
+    flex-direction: column;
   }
 </style>
