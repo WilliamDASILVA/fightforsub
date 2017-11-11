@@ -1,0 +1,112 @@
+@function convert-angle($value, $unit) {
+  $convertable-units: deg grad turn rad;
+  $conversion-factors: 1 (10grad/9deg) (1turn/360deg) (3.1415926rad/180deg);
+  @if index($convertable-units, unit($value)) and index($convertable-units, $unit) {
+    @return $value
+             / nth($conversion-factors, index($convertable-units, unit($value)))
+             * nth($conversion-factors, index($convertable-units, $unit));
+  }
+  
+  @warn "Cannot convert `#{unit($value)}` to `#{$unit}`.";
+}
+
+@function is-direction($value) {
+  $is-direction: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+  $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+  
+  @return $is-direction or $is-angle;
+}
+
+@function legacy-direction($value) {
+  @if is-direction($value) == false {
+    @warn "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be an angle or a direction";
+  }
+  
+  $conversion-map: ( 
+    to top          : bottom,
+    to top right    : bottom left,
+    to right top    : left bottom,
+    to right        : left,
+    to bottom right : top left,
+    to right bottom : left top,
+    to bottom       : top,
+    to bottom left  : top right,
+    to left bottom  : right top,
+    to left         : right,
+    to left top     : right bottom,
+    to top left     : bottom right
+  );
+    
+  @if map-has-key($conversion-map, $value) {
+    @return map-get($conversion-map, $value);
+  }
+  
+  @return 90deg - convert-angle($value, 'deg');
+}
+
+@mixin linear-gradient($direction, $color-stops...) {
+  @if is-direction($direction) == false {
+    $color-stops: ($direction, $color-stops);
+    $direction: 180deg;
+  }
+  
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: -moz-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=nth(nth($color-stops, 1), 1), endColorstr=nth(nth($color-stops, 1), 1),GradientType=1 );
+}
+
+@mixin filter($filters){
+	-webkit-filter: $filters;
+     -moz-filter: $filters;
+       -o-filter: $filters;
+          filter: $filters;
+}
+
+@mixin zoom($zooms){
+	-webkit-zoom: $zooms;
+     -moz-zoom: $zooms;
+       -o-zoom: $zooms;
+          zoom: $zooms;
+}
+
+@mixin transition($transitions...){
+	-webkit-transition: $transitions;
+     -moz-transition: $transitions;
+       -o-transition: $transitions;
+          transition: $transitions;
+}
+
+@mixin box-shadow($box-shadows...){
+	-webkit-box-shadow: $box-shadows;
+     -moz-box-shadow: $box-shadows;
+       -o-box-shadow: $box-shadows;
+          box-shadow: $box-shadows;
+}
+@mixin text-shadow($text-shadows...){
+	-webkit-text-shadow: $text-shadows;
+     -moz-text-shadow: $text-shadows;
+       -o-text-shadow: $text-shadows;
+          text-shadow: $text-shadows;
+}
+
+@mixin transform($transforms...){
+	-webkit-transform: $transforms;
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+          transform: $transforms;
+}
+@mixin transform-origin($transform-origins...){
+	-webkit-transform-origin: $transform-origins;
+     -moz-transform-origin: $transform-origins;
+       -o-transform-origin: $transform-origins;
+          transform-origin: $transform-origins;
+}
+
+@mixin animation($animations){
+	-webkit-animation: $animations;
+     -moz-animation: $animations;
+       -o-animation: $animations;
+          animation: $animations;
+}
