@@ -11,6 +11,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' },
     ],
   },
   css: [
@@ -20,6 +21,7 @@ module.exports = {
   loading: { color: '#28d244' },
   plugins: [
     '~/plugins/vuetify.js',
+    '~/plugins/vue-lazyload.js',
   ],
   build: {
     extend(config, ctx) {

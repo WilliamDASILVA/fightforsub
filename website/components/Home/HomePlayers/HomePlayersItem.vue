@@ -1,22 +1,49 @@
 <template>
   <div id="home-players-item">
-    <a href="" class="home-players-item">
-      <div class="home-players-item-image">
-        <div class="item-views">
+    <div v-if="data" class="home-players-item">
+      <div class="home-players-item-image-el">
+        <div
+          class="home-players-item-image"
+          v-lazy:background-image="data.image"
+        ></div>
+        <!-- <div class="item-views">
           {{ data.views }} views
         </div>
         <div
           v-if="data.handicap"
           class="item-handicap">
           Handicap
-        </div>
-        <div
+        </div> -->
+        <!-- <div
           :class="{confirmed: data.status === 'confirmed'}"
           class="item-status">
           Confirmé
+        </div> -->
+      </div>
+      <div class="home-players-item-slide-el">
+        <div class="home-players-item-slide">
+          <div class="slide-content">
+            <div class="slide-content-name">
+              {{ data.name }}
+            </div>
+            <nav>
+              <ul>
+                <li>
+                  <a href="">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <i class="fa fa-twitch"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
-    </a>
+    </div>
   </div>
 </template>
 
@@ -35,22 +62,27 @@
   @import '~assets/scss/style.scss';
 
   .home-players-item{
+    position: relative;
     display: flex;
     text-decoration: none;
-    
-    &-image{
-      position: relative;
-      height: 150px;
+    height: 150px;
+    width: 100%;
+
+    &-image-el{
+      position: absolute;
       width: 100%;
-      background-image: url('https://pbs.twimg.com/profile_images/818601581155352577/pEPZ0RHn_400x400.jpg');
-      background-size: cover;
-      background-position: center;
+      height: 100%;
+
+      .item-views, .item-handicap, .item-status{
+        @include transition(opacity 200ms);
+        opacity: 1;
+      }
 
       .item-views{
         position: absolute;
-        border-radius: 0 5px 5px 0;
-        top: -8px;
-        left: -8px;
+        border-radius: 0 0 5px 0;
+        top: 0;
+        left: 0;
         padding: 4px 8px;
 
         background: $darkgrey;
@@ -80,6 +112,81 @@
           background-color: $green;
           color: white;
         }
+      }
+    }
+
+    &-image{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: darken($green, 20%);
+      background-size: cover;
+      background-position: center;
+
+      @include transform(scale(1));
+      @include transition(transform 200ms);
+
+      &:hover{
+        @include transform(scale(1.1));
+      }
+    }
+
+    &:hover{
+      .item-handicap, .item-status, .item-views{
+        opacity: 0;
+      }
+      
+      .home-players-item-slide{
+        bottom: 0;
+        opacity: 0.8;
+      }
+    }
+
+    &-slide-el{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    &-slide{
+      position: absolute;
+      display: flex;
+      background-color: $green;
+      bottom: -150px;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      @include transition(bottom 200ms, opacity 200ms);
+
+      .slide-content{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+
+        &-name{
+          text-align: center;
+        }
+      }
+
+      nav{
+        margin: auto;
+      }
+
+      ul, li{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+
+      ul{
+        display: flex;
+        justify-content: center;
+      }
+
+      a{
+        color: white;
+        padding: 16px;
+        font-size: 18pt;
       }
     }
   }

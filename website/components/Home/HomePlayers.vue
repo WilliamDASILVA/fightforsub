@@ -30,6 +30,7 @@
       return {
         streams: Array.from(new Array(100).keys()).map(() => ({
           name: faker.name.findName(),
+          image: faker.image.avatar(),
           views: faker.random.number(100000),
           handicap: faker.random.boolean(),
           status: 'confirmed',
