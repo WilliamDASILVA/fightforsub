@@ -21,6 +21,7 @@ module.exports = {
   css: [
     '~/node_modules/normalize.css/normalize.css',
     '~/node_modules/vuetify/dist/vuetify.min.css',
+    '~/assets/scss/mobile.scss',
   ],
   loading: { color: '#28d244' },
   plugins: [

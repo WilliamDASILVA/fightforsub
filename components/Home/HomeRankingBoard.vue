@@ -18,7 +18,7 @@
         >
           <template slot="items" scope="props">
             <td>{{ props.item.name }}</td>
-            <td class="text-xs-right">{{ props.item.rank }}</td>
+            <td class="text-xs-right">1</td>
           </template>
         </v-data-table>
       </div>
@@ -34,8 +34,6 @@
 </template>
 
 <script>
-  import faker from 'faker';
-
   export default {
     name: 'home-ranking-board',
     data() {
@@ -49,11 +47,74 @@
           },
           { text: 'Rang', value: 'rank' },
         ],
-        items: Array.from(new Array(15).keys()).map((k, i) => ({
-          value: false,
-          name: faker.name.findName(),
-          rank: i + 1,
-        })),
+        items: [
+          {
+            name: 'Aayley',
+            twitch: 'aayley',
+          },
+          {
+            name: 'Acemodai',
+            twitch: 'acemodai',
+          },
+          {
+            name: 'Aiekillu',
+            twitch: 'aiekillu',
+          },
+          {
+            name: 'Alderiate',
+            twitch: 'alderiate',
+          },
+          {
+            name: 'Alphacast',
+            twitch: 'esl_alphacast',
+          },
+          {
+            name: 'As2pik',
+            twitch: 'as2pik',
+          },
+          {
+            name: 'Aypierre',
+            twitch: 'aypierre',
+          },
+          {
+            name: 'Bboy',
+            twitch: 'mrbboy45',
+          },
+          {
+            name: 'BestMarmotte',
+            twitch: 'bestmarmotte',
+          },
+          {
+            name: 'Caelan',
+            twitch: 'caelaneuw',
+          },
+          {
+            name: 'Chachatoy',
+            twitch: 'chachatoy',
+          },
+          {
+            name: 'Chap',
+            twitch: 'chap_gg',
+          },
+          {
+            name: 'Chinavanora',
+            twitch: 'chinavanora',
+          },
+          {
+            name: 'Counfouzz',
+            twitch: 'counfouzz',
+          },
+          {
+            name: 'Dahmien7',
+            twitch: 'dahmien7',
+            handi: true,
+          },
+        ],
+        // items: Array.from(new Array(15).keys()).map((k, i) => ({
+        //   value: false,
+        //   name: faker.name.findName(),
+        //   rank: i + 1,
+        // })),
       };
     },
   };

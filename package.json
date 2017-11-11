@@ -14,11 +14,13 @@
   },
   "dependencies": {
     "@nuxtjs/router": "^1.0.1",
+    "axios": "^0.17.0",
     "faker": "^4.1.0",
     "localforage": "1.5.2",
     "moment": "^2.18.0",
     "normalize.css": "^7.0.0",
     "nuxt": "^1.0.0-rc11",
+    "passport": "^0.4.0",
     "vee-validate": "^2.0.0-rc.21",
     "vue": "2.4.4",
     "vue-lazyload": "^1.1.4",

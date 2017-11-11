@@ -14,13 +14,6 @@
               </li>
               <li>
                 <nuxt-link
-                  to="/about"
-                >
-                  À propos
-                </nuxt-link>
-              </li>
-              <li>
-                <nuxt-link
                   to="/ranking"
                 >
                   Classement

@@ -2,7 +2,6 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import Home from '~/pages/home';
-import About from '~/pages/about';
 import Ranking from '~/pages/ranking';
 import Legal from '~/pages/legal';
 
@@ -15,11 +14,6 @@ export function createRouter() {
         name: 'home',
         path: '/',
         component: Home,
-      },
-      {
-        name: 'about',
-        path: '/about',
-        component: About,
       },
       {
         name: 'ranking',

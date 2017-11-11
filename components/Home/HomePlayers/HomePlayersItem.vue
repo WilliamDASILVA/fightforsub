@@ -2,11 +2,14 @@
   <div id="home-players-item">
     <div v-if="data" class="home-players-item">
       <div class="home-players-item-image-el">
-        <div
+        <player-image
+          :data="data"
+        />
+        <!-- <div
           class="home-players-item-image"
           v-lazy:background-image="data.image"
-        />
-        <div class="item-views">
+        /> -->
+        <!-- <div class="item-views">
           {{ data.views }} views
         </div>
         <div v-show="data.handicap" class="item-handicap">
@@ -16,7 +19,7 @@
           :class="{confirmed: data.status === 'confirmed'}"
           class="item-status">
           Confirmé
-        </div>
+        </div> -->
       </div>
       <div class="home-players-item-slide-el">
         <div class="home-players-item-slide">
@@ -46,12 +49,17 @@
 </template>
 
 <script>
+  import PlayerImage from './PlayerImage';
+
   export default {
     name: 'home-players-item',
     props: {
       data: {
         required: true,
       },
+    },
+    components: {
+      PlayerImage,
     },
   };
 </script>
@@ -120,6 +128,11 @@
       background-color: darken($green, 20%);
       background-size: cover;
       background-position: center;
+
+      #player-image{
+        width: 100%;
+        height: 100%;
+      }
 
       @include transform(scale(1));
       @include transition(transform 200ms);
