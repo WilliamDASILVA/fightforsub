@@ -1,17 +1,19 @@
 <template>
   <div>
-    <header>
-      <app-header/>
-      <app-main-header/>
-    </header>
-    <main>
-      <div class="content">
-        <nuxt/>
-      </div>
-    </main>
-    <footer>
-      footer
-    </footer>
+    <v-app dark>
+      <header>
+        <app-header/>
+        <app-main-header/>
+      </header>
+      <main>
+        <div class="content">
+          <nuxt/>
+        </div>
+      </main>
+      <footer>
+        footer
+      </footer>
+    </v-app>
   </div>
 </template>
 
@@ -31,6 +33,9 @@
 <style lang="scss">
   @import "./../assets/scss/style.scss";
 
+  main{
+    z-index: 1;
+  }
   .content{
     
   }

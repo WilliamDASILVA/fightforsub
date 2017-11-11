@@ -14,14 +14,14 @@
               </li>
               <li>
                 <nuxt-link
-                  to="/"
+                  to="/about"
                 >
                   À propos
                 </nuxt-link>
               </li>
               <li>
                 <nuxt-link
-                  to="/"
+                  to="/ranking"
                 >
                   Classement
                 </nuxt-link>
@@ -31,7 +31,8 @@
           <nav class="app-header-right">
             <ul>
               <li>
-                <a href="">
+                <a href="https://github.com/WilliamDASILVA/fightforsub">
+                  <i class="material-icons">help</i>
                   Contribuer
                 </a>
               </li>
@@ -81,6 +82,16 @@
         color: white;
         padding: 0 16px;
         text-decoration: none;
+        @include transition(border-bottom 100ms);
+
+        i{
+          vertical-align: middle;
+          font-size: 12pt;
+        }
+
+        &:hover{
+          border-bottom: 2px solid;
+        }
       }
     }
 

@@ -1,16 +1,15 @@
 <template>
-  <div id="home-player-list">
-    <div class="home-player-list">
-      <div class="home-player-list-header">
+  <div id="home-ranking-board">
+    <div class="home-ranking-board">
+      <div class="home-ranking-board-header">
         <h3>
-          Participants
+          Classement
         </h3>
         <p>
-          Liste de tous les participants
+          Top 15 des joueurs
         </p>
       </div>
-      <div class="home-player-list-content">
-        content
+      <div class="home-ranking-board-content">
         <v-data-table
           v-bind:headers="headers"
           :items="items"
@@ -29,8 +28,12 @@
           </template>
         </v-data-table>
       </div>
-      <div class="home-player-list-footer">
+      <div class="home-ranking-board-footer">
+        <button
+          class=""
+        >
 
+        </button>
       </div>
     </div>
   </div>
@@ -38,7 +41,7 @@
 
 <script>
   export default {
-    name: 'home-player-list',
+    name: 'home-ranking-board',
     data() {
       return {
         headers: [
@@ -77,6 +80,32 @@
 <style lang="scss" scoped>
   @import '~assets/scss/style.scss';
 
-  .home-player-list{
+  .home-ranking-board{
+    &-header{
+      position: relative;
+      top: -30px;
+      margin-bottom: -30px;
+      padding: 0 16px 16px 16px;
+      background: $green;
+      color: white;
+
+      p, h3{
+        text-align: center;
+      }
+
+      h3{
+        position: relative;
+        font-family: 'BigNoodle', 'Roboto', sans-serif;
+        font-style: italic;
+        top: -30px;
+        margin-bottom: -30px;
+
+        @include text-shadow(0 3px 5px rgba(black, 0.5));
+      }
+      
+      p{
+        margin: 0;
+      }
+    }
   }
 </style>

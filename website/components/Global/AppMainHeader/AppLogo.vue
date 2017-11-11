@@ -54,13 +54,13 @@
       border-radius: 40px;
       text-align: center;
       line-height: 40px;
-      bottom: 25px;
-      right: 20px;
+      bottom: 50px;
+      right: 30px;
     }
 
     &-sub{
       position: relative;
-      top: -20px;
+      top: -45px;
       color: white;
       text-transform: uppercase;
       font-size: 40pt;
